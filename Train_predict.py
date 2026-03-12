@@ -36,7 +36,7 @@ results = []
 target_cols = ['F1','F2','F3','BW1','BW2','BW3']
 
 print("\nTraining Models...\n")
-print(f"{'Model':<22} {'Avg R2':>8}  {'F1':>7} {'F2':>7} {'F3':>7} {'BW1':>7} {'BW2':>7} {'BW3':>7}")
+print(f"{'Model':<22} {'R2':>8}  {'F1':>7} {'F2':>7} {'F3':>7} {'BW1':>7} {'BW2':>7} {'BW3':>7}")
 print("-" * 80)
 
 for name,model in models.items():
@@ -57,7 +57,7 @@ for name,model in models.items():
 # Sort Results
 
 print("\n" + "="*80)
-print("Model Ranking (by Avg R2):")
+print("Model Ranking (by R2):")
 print("="*80)
 
 results = sorted(results,key=lambda x:x[1],reverse=True)
@@ -67,10 +67,10 @@ for i,(model,r2) in enumerate(results, 1):
 
 
 
-# Manual Input Prediction
+#Prediction
 
 print("\n" + "="*50)
-print("Manual Input Prediction using Linear Regression")
+print("Prediction using Linear Regression")
 print("="*50)
 print("Enter the antenna parameters below:\n")
 
