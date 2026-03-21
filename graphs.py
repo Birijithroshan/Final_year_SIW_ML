@@ -77,7 +77,7 @@ BINS        = 25
 
 fig1, axes1 = plt.subplots(4, 4, figsize=(20, 16))
 fig1.patch.set_facecolor('white')
-fig1.suptitle("Fig 1: Graphical Representation of Dataset Parameters",
+fig1.suptitle("Fig 1: K/Ka-Band Antenna Dataset Parameter Distributions",
               fontsize=16, fontweight='bold', y=1.005)
 
 for idx, col in enumerate(all_cols):
@@ -129,7 +129,7 @@ print("Fig 1 ready.")
 # FIG 2 – ML Error and Accuracy Analysis (2 × 2 subplots)
 # ════════════════════════════════════════════════════════════════════════════════
 fig2, axes2 = plt.subplots(2, 2, figsize=(18, 13))
-fig2.suptitle("Fig 2: ML Error and Accuracy Analysis for Frequency and Bandwidth",
+fig2.suptitle("Fig 2: ML Error and Accuracy Analysis (K/Ka Resonance + Bandwidth)",
               fontsize=16, fontweight='bold')
 
 x = np.arange(len(model_names))
@@ -197,7 +197,7 @@ display_names  = ["Linear Regression", "Decision Tree", "Gradient Boosting",
                   "Extra Tree",        "CatBoost",      "Random Forest"]
 
 fig3, axes3 = plt.subplots(2, 3, figsize=(18, 12))
-fig3.suptitle("Fig 3: Actual vs. Predicted Resonance Frequencies Using Machine Learning Models",
+fig3.suptitle("Fig 3: Actual vs. Predicted Resonance Frequencies (K/Ka Bands)",
               fontsize=15, fontweight='bold')
 
 for idx, (key, ax) in enumerate(zip(subplot_order, axes3.flatten())):
@@ -267,4 +267,5 @@ print("Fig 4 ready.")
 
 # ── Show all figures ──────────────────────────────────────────────────────────
 print("\nAll figures saved as PNG. Displaying now...")
-plt.show()
+if plt.get_backend().lower() != 'agg':
+    plt.show()
