@@ -15,7 +15,8 @@ data = pd.read_csv("antenna_dataset.csv")
 X = data[['R1','R2','R3','R4','R5','R6','R7','R8','d','Wf']]
 y = data[['F1','F2','F3','BW1','BW2','BW3']]
 
-# Train test split
+# Train test split R²
+
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=42)
 
 print("\nDataset Loaded Successfully")
@@ -37,7 +38,7 @@ target_cols = ['F1','F2','F3','BW1','BW2','BW3']
 trained_models = {}
 
 print("\nTraining Models...\n")
-print(f"{'Model':<22} {'Avg R2':>8}  {'F1':>7} {'F2':>7} {'F3':>7} {'BW1':>7} {'BW2':>7} {'BW3':>7}")
+print(f"{'Model':<22} {'Avg R²':>8}  {'F1':>7} {'F2':>7} {'F3':>7} {'BW1':>7} {'BW2':>7} {'BW3':>7}")
 print("-" * 80)
 
 for name,model in models.items():
@@ -59,7 +60,7 @@ for name,model in models.items():
 # Sort Results
 
 print("\n" + "="*80)
-print("Model Ranking (by Avg R2):")
+print("Model Ranking (by Avg R²):")
 print("="*80)
 
 results = sorted(results,key=lambda x:x[1],reverse=True)
