@@ -12,9 +12,8 @@ This project applies supervised machine learning to predict the resonance freque
 
 ## Project Workflow
 
-### Step 1 — Dataset Generation (`generate_dataset.py`)
+### Step 1 — Dataset Generation 
 
-A synthetic dataset of **600 antenna samples** is generated using physics-inspired analytical relationships between antenna geometry and electromagnetic performance.
 
 **Input parameters (10 features):**
 
@@ -77,13 +76,12 @@ The dataset is split into **80% training (480 samples)** and **20% testing (120 
 ## How to Run
 
 ```bash
-# Step 1: Generate the dataset
-python generate_dataset.py
 
-# Step 2: Train models and make a prediction
+
+# Step 1: Train models and make a prediction
 python Train_predict.py
 
-# Step 3: Generate all graphs
+# Step 2: Generate all graphs
 python graphs.py
 ```
 
